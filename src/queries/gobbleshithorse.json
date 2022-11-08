@@ -1,0 +1,222 @@
+{
+  "data": {
+    "axie": {
+      "id": "22568",
+      "image": "https://assets.axieinfinity.com/axies/22568/axie/axie-full-transparent.png",
+      "class": "Aquatic",
+      "chain": "Ronin",
+      "name": "Japanese Christmas",
+      "genes": "0x40080000062cb2420820094a102228c480652004006321040080090a04201908",
+      "newGenes": "0x200000000000010001c180c084080000000100080800450a00010010084143040001020018a100040001000018610404000101802000440a000100040800c408",
+      "owner": "0x8312907a28e130071d7ac7a1520452662eaef2a3",
+      "birthDate": 1546611300,
+      "bodyShape": "Normal",
+      "sireId": 16913,
+      "sireClass": "Aquatic",
+      "matronId": 16852,
+      "matronClass": "Aquatic",
+      "stage": 4,
+      "title": "",
+      "breedCount": 2,
+      "level": 1,
+      "figure": {
+        "atlas": "https://assets.axieinfinity.com/axies/22568/axie/axie.atlas",
+        "model": "https://assets.axieinfinity.com/axies/22568/axie/axie.json",
+        "image": "https://assets.axieinfinity.com/axies/22568/axie/axie.png",
+        "__typename": "AxieFigure"
+      },
+      "parts": [
+        {
+          "id": "eyes-mavis",
+          "name": "Mavis",
+          "class": "Bird",
+          "type": "Eyes",
+          "specialGenes": null,
+          "stage": 1,
+          "abilities": [],
+          "__typename": "AxiePart"
+        },
+        {
+          "id": "ears-merry-lamb",
+          "name": "Merry Lamb",
+          "class": "Beast",
+          "type": "Ears",
+          "specialGenes": "Xmas2018",
+          "stage": 1,
+          "abilities": [],
+          "__typename": "AxiePart"
+        },
+        {
+          "id": "back-hamaya",
+          "name": "Hamaya",
+          "class": "Beast",
+          "type": "Back",
+          "specialGenes": "Japan",
+          "stage": 1,
+          "abilities": [
+            {
+              "id": "beast-back-08",
+              "name": "Revenge Arrow",
+              "attack": 125,
+              "defense": 25,
+              "energy": 1,
+              "description": "Deal 150% damage if this Axie is in Last Stand.",
+              "backgroundUrl": "https://cdn.axieinfinity.com/game/cards/base/beast-back-08.png",
+              "effectIconUrl": "https://cdn.axieinfinity.com/game/cards/effect-icons/raise-damage.png",
+              "__typename": "AxieCardAbility"
+            }
+          ],
+          "__typename": "AxiePart"
+        },
+        {
+          "id": "mouth-lam",
+          "name": "Lam",
+          "class": "Aquatic",
+          "type": "Mouth",
+          "specialGenes": null,
+          "stage": 1,
+          "abilities": [
+            {
+              "id": "aquatic-mouth-02",
+              "name": "Angry Lam",
+              "attack": 110,
+              "defense": 40,
+              "energy": 1,
+              "description": "Deal 120% damage if this Axie's HP is below 50%.",
+              "backgroundUrl": "https://cdn.axieinfinity.com/game/cards/base/aquatic-mouth-02.png",
+              "effectIconUrl": "https://cdn.axieinfinity.com/game/cards/effect-icons/raise-damage.png",
+              "__typename": "AxieCardAbility"
+            }
+          ],
+          "__typename": "AxiePart"
+        },
+        {
+          "id": "horn-merry",
+          "name": "Merry",
+          "class": "Beast",
+          "type": "Horn",
+          "specialGenes": null,
+          "stage": 1,
+          "abilities": [
+            {
+              "id": "beast-horn-06",
+              "name": "Merry Legion",
+              "attack": 75,
+              "defense": 85,
+              "energy": 1,
+              "description": "Add 20% shield to this Axie when played in a chain.",
+              "backgroundUrl": "https://cdn.axieinfinity.com/game/cards/base/beast-horn-06.png",
+              "effectIconUrl": "https://cdn.axieinfinity.com/game/cards/effect-icons/raise-shield.png",
+              "__typename": "AxieCardAbility"
+            }
+          ],
+          "__typename": "AxiePart"
+        },
+        {
+          "id": "tail-ant",
+          "name": "Ant",
+          "class": "Bug",
+          "type": "Tail",
+          "specialGenes": null,
+          "stage": 1,
+          "abilities": [
+            {
+              "id": "bug-tail-02",
+              "name": "Chemical Warfare",
+              "attack": 30,
+              "defense": 100,
+              "energy": 1,
+              "description": "Apply Stench to enemy for 1 round.",
+              "backgroundUrl": "https://cdn.axieinfinity.com/game/cards/base/bug-tail-02.png",
+              "effectIconUrl": "https://cdn.axieinfinity.com/game/cards/effect-icons/stench.png",
+              "__typename": "AxieCardAbility"
+            }
+          ],
+          "__typename": "AxiePart"
+        }
+      ],
+      "stats": {
+        "hp": 41,
+        "speed": 48,
+        "skill": 35,
+        "morale": 40,
+        "__typename": "AxieStats"
+      },
+      "order": {
+        "id": 3582796,
+        "maker": "0x8312907a28e130071d7ac7a1520452662eaef2a3",
+        "kind": "Sell",
+        "assets": [
+          {
+            "erc": "Erc721",
+            "address": "0x32950db2a7164ae833121501c797d79e7b79d74c",
+            "id": "22568",
+            "quantity": "0",
+            "orderId": 3582796,
+            "__typename": "Asset"
+          }
+        ],
+        "expiredAt": 1681495286,
+        "paymentToken": "0xc99a6a985ed2cac1ef41640596c5a5f9f4e19ef5",
+        "startedAt": 1665770486,
+        "basePrice": "8500000000000000000",
+        "endedAt": 1666980086,
+        "endedPrice": "5000000000000000000",
+        "expectedState": "",
+        "nonce": 0,
+        "marketFeePercentage": 425,
+        "signature": "0x459bca967da027794b694e2b3aef5b7f00d6e2d35ee05bb80ddf3158e878ed1034e9690a2e6e9b66e51125668293f71f77002be9ee40c40ede15d90fc7552c441c",
+        "hash": "e6751d0d91653105d26be05012d60da92304ea5024d34f7d128b6d9ffcb84b6e",
+        "duration": 1209600,
+        "timeLeft": 1188534,
+        "currentPrice": "8439045138888888888",
+        "suggestedPrice": "8439218750000000000",
+        "currentPriceUsd": "10948.817163194446",
+        "__typename": "Order"
+      },
+      "ownerProfile": {
+        "name": "Artisan Axies",
+        "__typename": "PublicProfile"
+      },
+      "battleInfo": {
+        "banned": false,
+        "banUntil": null,
+        "level": 0,
+        "__typename": "AxieBattleInfo"
+      },
+      "children": [
+        {
+          "id": "26360",
+          "name": "Hamaya 1 of 1069/6.23% of total -> decent pvp moveset",
+          "class": "Bug",
+          "image": "https://assets.axieinfinity.com/axies/26360/axie/axie-full-transparent.png",
+          "title": "",
+          "stage": 4,
+          "__typename": "Axie"
+        },
+        {
+          "id": "24532",
+          "name": "Joelle",
+          "class": "Beast",
+          "image": "https://assets.axieinfinity.com/axies/24532/axie/axie-full-transparent.png",
+          "title": "",
+          "stage": 4,
+          "__typename": "Axie"
+        }
+      ],
+      "potentialPoints": {
+        "beast": 4,
+        "aquatic": 2,
+        "plant": 0,
+        "bug": 1,
+        "bird": 1,
+        "reptile": 0,
+        "mech": 0,
+        "dawn": 0,
+        "dusk": 0,
+        "__typename": "PotentialPoints"
+      },
+      "__typename": "Axie"
+    }
+  }
+}
