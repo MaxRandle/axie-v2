@@ -1,8 +1,4 @@
-import {
-  getAxieBriefList,
-  getAxieLatest,
-  getRecentlyAxiesSold,
-} from "./queries";
+import { getRecentlyAxiesSold } from "./queries";
 
 const getRecentTransferRecords = async () => {
   const recentAxieSales = await getRecentlyAxiesSold({

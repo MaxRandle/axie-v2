@@ -1,6 +1,6 @@
 import axios from "axios";
 import { AXIE_INFINITY_MARKETPLACE_GRAPHQL_API_URL } from "../config";
-import { Axie } from "./types";
+import { Class, Part } from "./types";
 
 type AuctionType = "All" | "Sale" | "NotForSale";
 type SortBy = "PriceAsc" | "PriceDesc" | "IdAsc" | "IdDesc" | "Latest";
@@ -18,6 +18,22 @@ type getAxieBriefListArgs = {
   size?: number;
   criteria?: AxieSearchCriteria;
   owner?: string;
+};
+
+type Axie = {
+  id?: string;
+  genes?: string;
+  class?: Class;
+  breedCount?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  stage?: 1 | 4;
+  title: string;
+  parts?: [Part, Part, Part, Part, Part, Part];
+  auction: {
+    startingPrice?: string;
+    endingPrice?: string;
+    startingTimestamp?: number;
+    endingTimestamp?: number;
+  };
 };
 
 export const getAxieBriefList = async (args: getAxieBriefListArgs) =>
@@ -62,8 +78,10 @@ export const getAxieBriefList = async (args: getAxieBriefListArgs) =>
         __typename
       }
       auction {
-        currentPrice
-        currentPriceUSD
+        startingPrice
+        endingPrice
+        startingTimestamp
+        endingTimestamp
         __typename
       }
       parts {
