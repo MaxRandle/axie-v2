@@ -1,13 +1,12 @@
 import axios from "axios";
 import { AXIE_INFINITY_MARKETPLACE_GRAPHQL_API_URL } from "../config";
-import { Axie } from "./types";
 
 type GetAxieDetailArgs = {
   axieId: string;
 };
 
 export const getAxieDetail = async (args: GetAxieDetailArgs) =>
-  axios.post<Axie>(AXIE_INFINITY_MARKETPLACE_GRAPHQL_API_URL, {
+  axios.post(AXIE_INFINITY_MARKETPLACE_GRAPHQL_API_URL, {
     variables: args,
     query: `
     query GetAxieDetail($axieId: ID!) {

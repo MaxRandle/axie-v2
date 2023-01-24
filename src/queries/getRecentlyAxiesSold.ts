@@ -8,27 +8,27 @@ type GetRecentlyAxiesSoldArgs = {
 };
 
 type TransferRecord = {
-  txHash?: string;
-  timestamp?: number;
-  withPrice?: string;
-  withPriceUsd?: string;
-  from?: string;
-  to?: string;
+  txHash: string;
+  timestamp: number;
+  withPrice: string;
+  withPriceUsd: string;
+  from: string;
+  to: string;
 };
 
 export type Axie = {
-  id?: string;
-  genes?: string;
-  class?: Class;
-  breedCount?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
-  stage?: 1 | 4;
+  id: string;
+  genes: string;
+  class: Class;
+  breedCount: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  stage: 1 | 4;
   title: string;
-  battleInfo?: {
-    banned?: boolean;
+  battleInfo: {
+    banned: boolean;
   };
   parts: [Part, Part, Part, Part, Part, Part];
-  transferHistory?: {
-    results?: TransferRecord[];
+  transferHistory: {
+    results: TransferRecord[];
   };
 };
 
@@ -71,6 +71,7 @@ export const getRecentlyAxiesSold = async (args: GetRecentlyAxiesSoldArgs) =>
       id
       class
       breedCount
+      stage
       title
       __typename
       battleInfo {

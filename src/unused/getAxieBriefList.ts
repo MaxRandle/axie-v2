@@ -1,6 +1,6 @@
 import axios from "axios";
 import { AXIE_INFINITY_MARKETPLACE_GRAPHQL_API_URL } from "../config";
-import { Class, Part } from "./types";
+import { Class, Part } from "../queries";
 
 type AuctionType = "All" | "Sale" | "NotForSale";
 type SortBy = "PriceAsc" | "PriceDesc" | "IdAsc" | "IdDesc" | "Latest";

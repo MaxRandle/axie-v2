@@ -1,6 +1,5 @@
 import axios from "axios";
 import { AXIE_INFINITY_MARKETPLACE_GRAPHQL_API_URL } from "../config";
-import { Axie } from "./types";
 
 type AuctionType = "All" | "Sale" | "NotForSale";
 type SortBy = "PriceAsc" | "PriceDesc" | "IdAsc" | "IdDesc" | "Latest";
@@ -21,7 +20,7 @@ type GetAxieLatestArgs = {
 };
 
 export const getAxieLatest = async (args: GetAxieLatestArgs) =>
-  axios.post<Axie[]>(AXIE_INFINITY_MARKETPLACE_GRAPHQL_API_URL, {
+  axios.post(AXIE_INFINITY_MARKETPLACE_GRAPHQL_API_URL, {
     variables: args,
     query: `
     query GetAxieLatest(

@@ -1,28 +1,28 @@
-import { getRecentlyAxiesSold } from "./queries";
+import { recentSales } from "./cronjobs/recentSales";
+import cron from "node-cron";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
-const getRecentTransferRecords = async () => {
-  const recentAxieSales = await getRecentlyAxiesSold({
-    from: 0,
-    size: 100,
-  });
-
-  const recentTransferRecords =
-    recentAxieSales.data.data.settledAuctions.axies.results?.map((axie) => ({
-      txHash: axie.transferHistory?.results?.[0].txHash,
-      timestamp: axie.transferHistory?.results?.[0].timestamp,
-      withPrice: axie.transferHistory?.results?.[0].withPrice,
-      withPriceUsd: axie.transferHistory?.results?.[0].withPriceUsd,
-      parts: axie.parts,
-      axieId: axie.id,
-    }));
-
-  return recentTransferRecords;
-};
+// constants
+const MONGODB_URI = process.env.MONGODB_URI;
 
 const main = async () => {
-  const recentTransferRecords = await getRecentTransferRecords();
-
-  console.log(recentTransferRecords[0].parts);
+  cron.schedule("*/10 * * * * *", recentSales);
 };
 
-main();
+const startup = () => {
+  if (!MONGODB_URI) {
+    throw new Error("variable MONGODB_URI not found");
+  }
+
+  mongoose
+    .connect(MONGODB_URI)
+    .then(() => {
+      console.log("MongoDB Connected");
+      main();
+    })
+    .catch((err) => console.log(err));
+};
+
+startup();
