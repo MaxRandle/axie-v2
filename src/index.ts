@@ -8,21 +8,40 @@ dotenv.config();
 const MONGODB_URI = process.env.MONGODB_URI;
 
 const main = async () => {
-  cron.schedule("*/10 * * * * *", recentSales);
+  cron.schedule("* * * * *", recentSales);
 };
 
-const startup = () => {
-  if (!MONGODB_URI) {
-    throw new Error("variable MONGODB_URI not found");
-  }
+const mongoConnect = async () => {
+  try {
+    if (!MONGODB_URI) {
+      throw new Error("variable MONGODB_URI not found");
+    }
 
-  mongoose
-    .connect(MONGODB_URI)
-    .then(() => {
-      console.log("MongoDB Connected");
-      main();
-    })
-    .catch((err) => console.log(err));
+    await mongoose.connect(MONGODB_URI);
+    mongoose.set("strictQuery", false);
+    console.log("MongoDB Connected");
+    return;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const mongoDisconnect = async () => {
+  await mongoose.disconnect();
+  console.log(" MongoDB Disconnected");
+};
+
+const startup = async () => {
+  const commandLineArg = process.argv.slice(2)[0];
+
+  if (commandLineArg === "recent-sales") {
+    await mongoConnect();
+    await recentSales();
+    await mongoDisconnect();
+  } else {
+    await mongoConnect();
+    return main();
+  }
 };
 
 startup();

@@ -4,7 +4,7 @@ import AxieSettledAuction, {
 } from "../models/AxieSettledAuction";
 import { Axie, getRecentlyAxiesSold } from "../queries";
 
-const SIZE = 10;
+const SIZE = 100;
 
 export const recentSales = async () => {
   console.log("recent sales - START");
