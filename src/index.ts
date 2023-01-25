@@ -28,7 +28,7 @@ const mongoConnect = async () => {
 
 const mongoDisconnect = async () => {
   await mongoose.disconnect();
-  console.log(" MongoDB Disconnected");
+  console.log("MongoDB Disconnected");
 };
 
 const startup = async () => {
