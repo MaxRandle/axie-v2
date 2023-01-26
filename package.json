@@ -8,7 +8,7 @@
     "dev": "nodemon",
     "build": "rimraf ./build && tsc",
     "start": "node build/index.js",
-    "recent-sales": "node build/index.js recent-sales"
+    "get-recent-sales": "node build/index.js get-recent-sales"
   },
   "keywords": [],
   "author": "",

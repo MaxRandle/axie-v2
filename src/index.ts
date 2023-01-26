@@ -1,4 +1,4 @@
-import { recentSales } from "./cronjobs/recentSales";
+import { getRecentSales } from "./cronjobs/getRecentSales";
 import cron from "node-cron";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
@@ -8,7 +8,7 @@ dotenv.config();
 const MONGODB_URI = process.env.MONGODB_URI;
 
 const main = async () => {
-  cron.schedule("* * * * *", recentSales);
+  cron.schedule("*/10 * * * * *", getRecentSales);
 };
 
 const mongoConnect = async () => {
@@ -17,8 +17,8 @@ const mongoConnect = async () => {
       throw new Error("variable MONGODB_URI not found");
     }
 
+    mongoose.set("strictQuery", false);
     await mongoose.connect(MONGODB_URI);
-    mongoose.set("strictQuery", true);
     console.log("MongoDB Connected");
     return;
   } catch (err) {
@@ -34,9 +34,9 @@ const mongoDisconnect = async () => {
 const startup = async () => {
   const commandLineArg = process.argv.slice(2)[0];
 
-  if (commandLineArg === "recent-sales") {
+  if (commandLineArg === "get-recent-sales") {
     await mongoConnect();
-    await recentSales();
+    await getRecentSales();
     await mongoDisconnect();
   } else {
     await mongoConnect();
