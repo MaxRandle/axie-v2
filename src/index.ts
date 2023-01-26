@@ -18,7 +18,7 @@ const mongoConnect = async () => {
     }
 
     await mongoose.connect(MONGODB_URI);
-    mongoose.set("strictQuery", false);
+    mongoose.set("strictQuery", true);
     console.log("MongoDB Connected");
     return;
   } catch (err) {
