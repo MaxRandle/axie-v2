@@ -2,6 +2,7 @@ import { getRecentSales } from "./cronjobs/getRecentSales";
 import cron from "node-cron";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import { getRecentLiveAuctions } from "./cronjobs/getRecentLiveAuctions";
 dotenv.config();
 
 // constants
@@ -39,8 +40,14 @@ const startup = async () => {
     await getRecentSales();
     await mongoDisconnect();
   } else {
-    await mongoConnect();
-    return main();
+    if (commandLineArg === "get-recent-auctions") {
+      await mongoConnect();
+      await getRecentLiveAuctions();
+      await mongoDisconnect();
+    } else {
+      await mongoConnect();
+      return main();
+    }
   }
 };
 
